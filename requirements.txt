@@ -1,10 +1,5 @@
 pyrogram==2.0.106
 tgcrypto==1.2.5
-aiohttp==3.9.5
-aiofiles==23.2.1
 gdown==5.1.0
 tqdm==4.67
-rarfile==4.1
-pyunpack==0.3
 patool==1.12
-python-dotenv==1.0.1
