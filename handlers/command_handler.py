@@ -10,7 +10,7 @@ from handlers.gdrive_handler import gdrive_command_handler, handle_gdrive_link
 logger = logging.getLogger(__name__)
 
 def add_command_handlers(app: Client):
-    # /start
+    # /start handler
     @app.on_message(filters.command("start") & filters.private)
     async def start_handler(client: Client, message: Message):
         user = message.from_user
@@ -25,18 +25,17 @@ def add_command_handlers(app: Client):
             "📌 Saat ini hanya mendukung:\n"
             " - /gdrive → Google Drive\n"
             " - /mega   → (segera)\n"
-            " - /terra  → (segera)\n"
+            " - /terra  → (segera)"
         )
 
-    # /gdrive
+    # Tambahkan handler per layanan
     app.add_handler(gdrive_command_handler)
     app.add_handler(handle_gdrive_link)
 
-    # Handler lain siap ditambahkan
     # app.add_handler(mega_command_handler)
     # app.add_handler(handle_mega_link)
 
     # app.add_handler(terra_command_handler)
     # app.add_handler(handle_terra_link)
 
-    logger.info("📌 Handler /start, /gdrive, /mega, dan /terra ditambahkan.")
+    logger.info("📌 Semua command handler berhasil ditambahkan.")
