@@ -1,6 +1,6 @@
 import logging
 import asyncio
-from pyrogram import Client
+from pyrogram import Client, idle  # ✅ perbaikan di sini
 from handlers.command_handler import add_command_handlers
 from config import API_ID, API_HASH, SESSION_STRING
 
@@ -29,9 +29,9 @@ async def main():
     await app.start()
     logger.info("✅ Pyrogram client berhasil dijalankan.")
     logger.info("🚀 Bot siap menerima perintah unzip!")
-    await idle()
+
+    await idle()  # ✅ biarkan bot tetap berjalan
     await app.stop()
 
 if __name__ == "__main__":
-    from pyrogram.idle import idle
     asyncio.run(main())
