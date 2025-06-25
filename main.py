@@ -2,7 +2,6 @@ import logging
 import asyncio
 from pyrogram import Client
 from handlers.command_handler import add_command_handlers
-from handlers.unzip_handler import add_unzip_handler
 from config import API_ID, API_HASH, SESSION_STRING
 
 # Setup logging
@@ -26,7 +25,6 @@ async def main():
 
     # Tambahkan handler
     add_command_handlers(app)
-    add_unzip_handler(app)
 
     await app.start()
     logger.info("✅ Pyrogram client berhasil dijalankan.")
